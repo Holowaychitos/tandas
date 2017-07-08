@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
 })
 
 Form.navigationOptions = {
-  title: ''
+  title: ' '
 }
 
 function mapDispatchToProps (dispatch) {
