@@ -24,6 +24,7 @@ export default ({info, idx, actions, count = 0}) => (
 
       <Text style={styles.title}>{info.owner}</Text>
       <Text style={styles.price}>${info.amount.toLocaleString()}</Text>
+      <Text style={styles.date}>Fecha de inicio {moment(info.date).format('L')}</Text>
 
       <View style={styles.array}>
         {info.people.map((el, key) => {
@@ -38,7 +39,6 @@ export default ({info, idx, actions, count = 0}) => (
 
     </View>
     <View style={styles.actions}>
-        <Text style={styles.date}>{moment(info.date).format('L')}</Text>
       {/* <Text style={styles.count}>{count}</Text> */}
       {
         info.people.includes(userID)
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   date: {
-    marginBottom: 10
+    fontSize: 10
   },
   actions: {
     alignItems: 'center',
