@@ -16,7 +16,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as apiActions from '../actions/api'
 
-import Icon from 'react-native-vector-icons/Entypo'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 import Product from '../components/Product'
 
 const {height, width} = Dimensions.get('window')
@@ -39,14 +39,8 @@ class HomeScreen extends Component {
     let { navigate } = this.props.navigation
     let { tandas, cart, actions } = this.props
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: '#fff'}}>
         <StatusBar barStyle='dark-content' />
-        <View style={styles.header}>
-          <Text style={styles.headerText}></Text>
-          <Text style={styles.headerTextBold}>
-            <Icon onPress={() => navigate('Form')} size={20} name='add-to-list' color='#000' />
-          </Text>
-        </View>
         <ScrollView>
           {tandas.map((el, idx) => {
             return (
@@ -60,6 +54,12 @@ class HomeScreen extends Component {
             )
           })}
         </ScrollView>
+
+        <View style={styles.header}>
+          <Text style={styles.headerTextBold}>
+            <Icon onPress={() => navigate('Form')} size={50} name='add-circle-outline' color='#ff5300' />
+          </Text>
+        </View>
       </View>
     )
   }
@@ -83,9 +83,12 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: '#000',
-    fontSize: 20
+    fontSize: 20,
+    alignItems: 'center'
   },
   headerTextBold: {
+    flex: 1,
+    textAlign: 'center',
     marginTop: 10,
     color: '#000',
     // fontWeight: 'bold',

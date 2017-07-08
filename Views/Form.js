@@ -67,7 +67,8 @@ class Form extends Component {
       <View style={{flex: 1, padding: 15}}>
         <StatusBar barStyle='dark-content' />
         <View>
-          <Text style={{}}>Crear tu meta de ahorro es muy facil solo indica el monto que quieres obtener mensualmente</Text>
+          <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18}}>Crear tu meta de ahorro es muy facil</Text>
+          <Text style={{marginTop: 20}}>Dinos cuanto quieres ahorrar</Text>
         </View>
         <View style={styles.inputGroup}>
           <TextInput
@@ -78,16 +79,13 @@ class Form extends Component {
             keyboardType='number-pad'
             autoFocus
           />
-          <Text style={{fontSize: 10, textAlign: 'right', marginTop: 5}}>Monto minimo: $1000 mxn</Text>
-        </View>
-
-
-        <View style={{marginBottom: 10}}>
-          <Text>Pago semanal: ${total.toLocaleString()}</Text>
+          <Text style={{fontSize: 12, textAlign: 'right', marginTop: 10}}>
+            Pagarías <Text style={{color: '#ff5300'}}>${total.toLocaleString()}</Text> a la semana
+          </Text>
         </View>
 
         <View style={{marginBottom: 10}}>
-          <Text>Fecha de inicio</Text>
+          <Text>Cuando quieres empezar:</Text>
           <DatePickerIOS
             minimumDate={new Date()}
             date={this.state.date}
@@ -100,7 +98,7 @@ class Form extends Component {
         <Button
           onPress={this.save.bind(this)}
           title='Crear Tanda'
-          color='blue'
+          color='#ff5300'
           accessibilityLabel='Learn more about this purple button'
         />
       </View>
@@ -114,14 +112,14 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#ababab',
+    borderColor: '#ff5300',
     borderWidth: 1,
     paddingLeft: 10
   }
 })
 
 Form.navigationOptions = {
-  title: 'Nueva Tanda'
+  title: ''
 }
 
 function mapDispatchToProps (dispatch) {
